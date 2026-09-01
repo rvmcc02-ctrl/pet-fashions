@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Fashions – Stylish Apparel for Your Fur Baby</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fcf9f7;
+      color: #1e1a18;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    /* ---------- TOP BAR ---------- */
+    .top-bar {
+      background-color: #2d2a28;
+      color: #f5ede9;
+      padding: 8px 0;
+      font-size: 0.8rem;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+    .top-bar i { margin: 0 4px; color: #f2b84b; }
+    .top-bar span { margin: 0 12px; }
+
+    /* ---------- HEADER ---------- */
+    header {
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #1e1a18;
+      text-decoration: none;
+    }
+    .logo i { color: #d35e3b; margin-right: 6px; }
+    .logo span { color: #d35e3b; }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #1e1a18;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #d35e3b; }
+
+    .header-icons {
+      display: flex;
+      gap: 18px;
+      font-size: 1.2rem;
+    }
+    .header-icons i {
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .header-icons i:hover { color: #d35e3b; }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px 0 30px;
+      gap: 30px;
+    }
+    .hero-text { flex: 1 1 45%; }
+    .hero-text .badge {
+      background: #f2e3dc;
+      color: #b24a2c;
+      padding: 4px 16px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    .hero-text h1 i { color: #d35e3b; }
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #4a403c;
+      max-width: 460px;
+      margin-bottom: 28px;
+    }
+    .btn-primary {
+      background: #d35e3b;
+      color: #fff;
+      border: none;
+      padding: 14px 38px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.1s;
+      display: inline-block;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(211, 94, 59, 0.3);
+    }
+    .btn-primary:hover {
+      background: #b84c2e;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid #d35e3b;
+      color: #d35e3b;
+      padding: 12px 32px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-left: 10px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-secondary:hover {
+      background: #d35e3b;
+      color: #fff;
+    }
+    .hero-image {
+      flex: 1 1 45%;
+      background: #e8ddd7;
+      border-radius: 30px;
+      padding: 20px 20px 0 20px;
+      text-align: center;
+      min-height: 280px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .hero-image .placeholder-pet {
+      font-size: 6rem;
+      color: #b87a64;
+      padding: 30px 0 10px;
+    }
+    .hero-image .placeholder-pet p {
+      font-size: 0.9rem;
+      color: #5f4a3c;
+      font-weight: 600;
+    }
+
+    /* ---------- TRUST ROW ---------- */
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+      padding: 40px 0 20px;
+      border-top: 1px solid #ede6e1;
+      margin-top: 20px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .trust-item i { font-size: 1.6rem; color: #d35e3b; }
+
+    /* ---------- PRODUCT GRID ---------- */
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 800;
+      margin: 50px 0 12px;
+    }
+    .section-sub { color: #5f514a; margin-bottom: 28px; }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 30px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 18px 16px 22px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      transition: box-shadow 0.25s, transform 0.2s;
+      text-align: center;
+      border: 1px solid #f1ebe7;
+    }
+    .product-card:hover {
+      box-shadow: 0 12px 36px rgba(0,0,0,0.06);
+      transform: translateY(-5px);
+    }
+    .product-card .product-img {
+      background: #f5f0ec;
+      border-radius: 18px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.8rem;
+      color: #b87a64;
+      margin-bottom: 12px;
+    }
+    .product-card h3 { font-size: 1rem; font-weight: 700; }
+    .product-card .price {
+      font-weight: 700;
+      color: #d35e3b;
+      font-size: 1.2rem;
+      margin: 6px 0 10px;
+    }
+    .product-card .old-price {
+      text-decoration: line-through;
+      color: #988b84;
+      font-weight: 400;
+      font-size: 0.9rem;
+      margin-left: 6px;
+    }
+    .product-card .rating { color: #f2b84b; font-size: 0.8rem; letter-spacing: 2px; }
+    .btn-add {
+      background: #1e1a18;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      width: 100%;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 8px;
+    }
+    .btn-add:hover { background: #d35e3b; }
+
+    /* ---------- TESTIMONIALS ---------- */
+    .testimonial-section {
+      background: #fff;
+      border-radius: 30px;
+      padding: 40px 30px;
+      margin: 50px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      border: 1px solid #f1ebe7;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+    .testimonial-item {
+      background: #f9f6f3;
+      padding: 20px;
+      border-radius: 18px;
+    }
+    .testimonial-item i { color: #f2b84b; margin-bottom: 8px; }
+    .testimonial-item p { font-size: 0.95rem; font-style: italic; color: #2d2a28; }
+    .testimonial-item .author {
+      font-weight: 700;
+      margin-top: 10px;
+      font-style: normal;
+      font-size: 0.85rem;
+    }
+
+    /* ---------- COOKIE CONSENT BANNER ---------- */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #1e1a18;
+      color: #f5ede9;
+      padding: 16px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      z-index: 999;
+      border-top: 3px solid #d35e3b;
+      font-size: 0.9rem;
+    }
+    .cookie-banner a { color: #f2b84b; text-decoration: underline; }
+    .cookie-banner .btn-cookie {
+      background: #d35e3b;
+      color: #fff;
+      border: none;
+      padding: 10px 28px;
+      border-radius: 40px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .cookie-banner .btn-cookie:hover { background: #b84c2e; }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #1e1a18;
+      color: #cdc2bc;
+      padding: 40px 0 20px;
+      border-radius: 30px 30px 0 0;
+      margin-top: 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 30px;
+    }
+    .footer-grid h4 { color: #fff; font-weight: 700; margin-bottom: 14px; }
+    .footer-grid a {
+      display: block;
+      color: #cdc2bc;
+      text-decoration: none;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-grid a:hover { color: #f2b84b; }
+    .footer-bottom {
+      border-top: 1px solid #3a3330;
+      margin-top: 30px;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+    .footer-bottom a { color: #f2b84b; text-decoration: none; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 800px) {
+      .hero-text h1 { font-size: 2.2rem; }
+      .header-flex { flex-direction: column; gap: 14px; }
+      .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+    }
+    @media (max-width: 500px) {
+      .hero-text h1 { font-size: 1.8rem; }
+      .btn-secondary { margin-left: 0; margin-top: 12px; display: block; text-align: center; }
+      .cookie-banner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <i class="fas fa-truck"></i> <span>Free shipping on orders $50+</span>
+    <i class="fas fa-undo-alt"></i> <span>30-day easy returns</span>
+    <i class="fas fa-shield-alt"></i> <span>100% secure checkout</span>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-flex">
+      <a href="index.html" class="logo">
+        <i class="fas fa-paw"></i>Pet<span>Fashions</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#">New Arrivals</a>
+        <a href="#">Dogs</a>
+        <a href="#">Cats</a>
+        <a href="#">Accessories</a>
+        <a href="#">Sale</a>
+      </div>
+      <div class="header-icons">
+        <i class="fas fa-search"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-shopping-bag"></i>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <span class="badge"><i class="fas fa-star"></i> Best Sellers 2026</span>
+        <h1>Dress Your <i class="fas fa-paw"></i> Pet <br>In Style</h1>
+        <p>Premium, cozy, and fashionable outfits for dogs & cats. Designed for comfort and turning heads at the park.</p>
+        <div>
+          <a href="#" class="btn-primary"><i class="fas fa-shopping-bag"></i> Shop Now</a>
+          <a href="#" class="btn-secondary">View Collection</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="placeholder-pet">
+          <i class="fas fa-dog"></i> <i class="fas fa-cat"></i>
+          <p>Stylish Pets • Happy Tails</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST ROW -->
+    <div class="trust-row">
+      <div class="trust-item"><i class="fas fa-leaf"></i> Eco-friendly fabrics</div>
+      <div class="trust-item"><i class="fas fa-ruler-combined"></i> Perfect fit guarantee</div>
+      <div class="trust-item"><i class="fas fa-heart"></i> 2,000+ happy pets</div>
+      <div class="trust-item"><i class="fas fa-award"></i> Vet-approved materials</div>
+    </div>
+
+    <!-- PRODUCT GRID -->
+    <h2 class="section-title">❤️ Trending Pet Styles</h2>
+    <p class="section-sub">Our best-selling looks—picked by stylish pets everywhere.</p>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-img"><i class="fas fa-dog"></i></div>
+        <h3>Cozy Knit Sweater</h3>
+        <div class="rating">★★★★★ (42)</div>
+        <div class="price">$34.99 <span class="old-price">$48.00</span></div>
+        <button class="btn-add"><i class="fas fa-plus"></i> Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><i class="fas fa-cat"></i></div>
+        <h3>Denim Jacket</h3>
+        <div class="rating">★★★★★ (28)</div>
+        <div class="price">$44.99</div>
+        <button class="btn-add"><i class="fas fa-plus"></i> Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><i class="fas fa-dog"></i></div>
+        <h3>Puffer Vest</h3>
+        <div class="rating">★★★★★ (19)</div>
+        <div class="price">$39.99 <span class="old-price">$52.00</span></div>
+        <button class="btn-add"><i class="fas fa-plus"></i> Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><i class="fas fa-cat"></i></div>
+        <h3>Bow Tie & Bandana</h3>
+        <div class="rating">★★★★★ (55)</div>
+        <div class="price">$18.99</div>
+        <button class="btn-add"><i class="fas fa-plus"></i> Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div class="testimonial-section">
+      <h3 style="font-size: 1.5rem;">🐾 What Pet Parents Say</h3>
+      <div class="testimonial-grid">
+        <div class="testimonial-item">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <p>"The sweater fits my Golden Retriever perfectly. She looks adorable and stays warm!"</p>
+          <div class="author">— Sarah M.</div>
+        </div>
+        <div class="testimonial-item">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <p>"My cat actually loves the denim jacket. Great quality and super stylish."</p>
+          <div class="author">— James K.</div>
+        </div>
+        <div class="testimonial-item">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <p>"Fast shipping and the bandana set is just too cute. Will buy again!"</p>
+          <div class="author">— Mia R.</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- COOKIE CONSENT BANNER (Required for Google Ads remarketing) -->
+  <div class="cookie-banner" id="cookieBanner">
+    <span>
+      <i class="fas fa-cookie-bite" style="color: #f2b84b;"></i> 
+      We use cookies to personalize your experience and for remarketing campaigns. 
+      By clicking "Accept", you consent to our use of cookies. 
+      <a href="privacy-policy.html">Learn more</a>
+    </span>
+    <button class="btn-cookie" onclick="acceptCookies()">Accept</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>PetFashions</h4>
+          <a href="#">About Us</a>
+          <a href="#">Sustainability</a>
+          <a href="#">Contact</a>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <a href="#">Dogs</a>
+          <a href="#">Cats</a>
+          <a href="#">Accessories</a>
+          <a href="#">Sale</a>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <a href="#">Size Guide</a>
+          <a href="#">Returns</a>
+          <a href="#">Shipping</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="privacy-policy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+          <a href="terms.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="#"><i class="fab fa-tiktok"></i> TikTok</a>
+          <a href="#"><i class="fab fa-pinterest"></i> Pinterest</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <i class="fas fa-paw"></i> © 2026 Pet Fashions – Made with love for pets everywhere.
+        <br>
+        <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Cookie consent handler
+    function acceptCookies() {
+      document.getElementById('cookieBanner').style.display = 'none';
+      // Set a cookie so we don't show the banner again
+      document.cookie = "petfashions_cookie_consent=true; max-age=31536000; path=/";
+    }
+
+    // Check if cookie consent already given
+    window.onload = function() {
+      if (document.cookie.indexOf('petfashions_cookie_consent=true') !== -1) {
+        document.getElementById('cookieBanner').style.display = 'none';
+      }
+    };
+  </script>
+
+</body>
+</html>
